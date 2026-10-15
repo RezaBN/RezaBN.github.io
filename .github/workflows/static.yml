@@ -1,5 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Publish academic website
 
 on:
   # Runs on pushes targeting the default branch
@@ -31,13 +30,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
+      - name: Build website
+        run: node scripts/build.mjs
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+      - name: Validate website
+        run: python3 scripts/check_site.py
+      - name: Verify homepage is ready to deploy
+        run: test -s dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Publish index.html at the top level of the deployed artifact.
+          path: dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
