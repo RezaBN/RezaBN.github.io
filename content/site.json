@@ -1,0 +1,59 @@
+{
+  "name": "Reza Barzegar Nozari",
+  "role": "PhD Researcher in Artificial Intelligence",
+  "university": "University of Isfahan",
+  "department": "Department of Artificial Intelligence, Faculty of Computer Engineering",
+  "location": "Isfahan, Iran",
+  "email": "barzegar@eng.ui.ac.ir",
+  "url": "https://rezabn.github.io",
+  "updated": "2026-10-15",
+  "links": {
+    "GitHub": "https://github.com/RezaBN",
+    "Google Scholar": "https://scholar.google.com/citations?user=lIX1xW4AAAAJ&hl=en",
+    "ORCID": "https://orcid.org/0000-0002-7051-0853",
+    "LinkedIn": "https://www.linkedin.com/in/rezabarzegarnozari/",
+    "ResearchGate": "https://www.researchgate.net/profile/Reza-Barzegar-Nozari",
+    "Web of Science": "https://www.webofscience.com/wos/author/record/37624750"
+  },
+  "research": [
+    {
+      "id": "recommendation", "number": "01", "title": "Learning from social interactions",
+      "short": "Recommendation & social influence",
+      "description": "How do trust, influence, and leadership shape collective preferences? My research models relationships between individuals to support personalized and group recommendation.",
+      "detail": "My published work investigates implicit trust-network construction, influence-aware group recommendation, leader impact, and adaptive group formation through multi-agent reinforcement learning. Applications include e-commerce and multi-day tourist itineraries.",
+      "tags": ["Recommender systems", "Trust networks", "Multi-agent reinforcement learning"]
+    },
+    {
+      "id": "distillation", "number": "02", "title": "Transferring knowledge efficiently",
+      "short": "Knowledge distillation & geometry",
+      "description": "How can a smaller model learn the most useful information from a larger one? I explore geometric alignment, optimal transport, and selective teacher supervision.",
+      "detail": "Current manuscripts investigate Wasserstein-based distribution alignment, student-calibrated teacher supervision, and budgeted distillation. These directions examine the relationship between representation geometry and the cost of knowledge transfer.",
+      "tags": ["Knowledge distillation", "Optimal transport", "Representation geometry"]
+    },
+    {
+      "id": "interpretability", "number": "03", "title": "Understanding and adapting models",
+      "short": "Causal analysis & language models",
+      "description": "Which internal components matter for a given input? My recent research explores mechanistic interpretability and causally informed adaptation of large language models.",
+      "detail": "The CRAT manuscript studies causally routed adaptive tuning for machine translation. Related interests include parameter-efficient fine-tuning, probabilistic graphical models, graph neural networks, and uncertainty-aware learning.",
+      "tags": ["Causal interpretability", "Large language models", "Parameter-efficient fine-tuning"]
+    }
+  ],
+  "manuscripts": [
+    {"title": "Influence-Aware Preference Shifting via Convex CRF for Fair and Diverse Group Recommendation", "status": "Ongoing research", "topic": "Probabilistic graphical models · Fairness · Social influence"},
+    {"title": "Wasserstein-Enhanced Student-Calibrated Teacher Distillation via Geometric Manifold Alignment", "status": "Under review", "topic": "Optimal transport · Geometric knowledge distillation"},
+    {"title": "Do We Need Every Teacher Prediction? Geometry-Calibrated Budgeted Distillation", "status": "Under review", "topic": "Efficient distillation · Selective teacher querying"},
+    {"title": "CRAT: Causally Routed Adaptive Tuning for Machine Translation with Large Language Models", "status": "Research manuscript", "topic": "Causal interpretability · LLM adaptation · Machine translation"}
+  ],
+  "reviews": [
+    ["Applied Intelligence", 15],
+    ["Applied Soft Computing", 14],
+    ["Electronic Commerce Research and Applications", 1],
+    ["Engineering Applications of Artificial Intelligence", 60],
+    ["Expert Systems with Applications", 8],
+    ["Information Fusion", 1],
+    ["Information Sciences", 3],
+    ["Knowledge-Based Systems", 4],
+    ["Multimedia Tools and Applications", 3],
+    ["The Journal of Supercomputing", 2]
+  ]
+}

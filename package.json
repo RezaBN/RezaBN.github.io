@@ -1,0 +1,12 @@
+{
+  "name": "reza-barzegar-nozari-academic-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static academic portfolio and Markdown blog for Reza Barzegar Nozari.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "python3 scripts/check_site.py"
+  },
+  "engines": {"node": ">=20"}
+}
