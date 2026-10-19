@@ -4,6 +4,7 @@ date: 2026-10-15
 category: Research perspective
 summary: The questions connecting my work on recommender systems, knowledge distillation, and the adaptation of language models.
 slug: research-notebook
+lang: en
 draft: false
 ---
 

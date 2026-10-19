@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "python3 scripts/check_site.py"
+    "check": "python3 scripts/check_site.py && node scripts/check_interactions.mjs"
   },
-  "engines": {"node": ">=20"}
+  "engines": {
+    "node": ">=20"
+  }
 }

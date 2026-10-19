@@ -4,6 +4,7 @@ date: 2026-10-15
 category: Research notes
 summary: A short description for the blog index and search engines.
 slug: your-article-slug
+lang: en
 draft: true
 ---
 

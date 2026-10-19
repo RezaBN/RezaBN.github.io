@@ -1,87 +1,110 @@
-# Reza Barzegar Nozari academic website
+# Reza Barzegar Nozari — English / فارسی
 
-A complete static academic website and Markdown blog, prepared for GitHub Pages. It includes biography and education, three research directions, current manuscripts, eight journal articles and one preprint, four GitHub projects, peer-review activity, and a downloadable Word CV.
+A complete bilingual academic website with an RBN personal logo, biography, research, publications, projects, peer-review activity, a Markdown blog, and a downloadable English Word CV.
 
-The website uses HTML, CSS, and small JavaScript enhancements. A dependency-free Node.js script turns editable JSON and Markdown files into static pages. No server, database, npm install, paid service, or API key is required.
+- **English:** https://rezabn.github.io/
+- **فارسی:** https://rezabn.github.io/fa/
 
-## Publish on GitHub Pages
+These GitHub URLs serve the bilingual version after the updated files are committed and the Pages workflow succeeds. The `English / فارسی` control on every page opens its counterpart. English links retain their original addresses. The Farsi pages have RTL layout, a self-hosted Vazirmatn font, localized controls, Persian digits, and Persian-calendar blog dates. Publication years remain Gregorian in both languages. Official English titles, authors, journal names, DOIs, and BibTeX are retained; Persian title translations appear above the original titles.
 
-1. Connect or sign in to the GitHub account **RezaBN**.
-2. Create the public repository **RezaBN.github.io** if it does not already exist. If it exists, review its current contents before replacing anything.
-3. Add the contents of this project to that repository's `main` branch, including `.github/workflows/pages.yml`. The ZIP handoff excludes private preview hosting metadata and Git history.
-4. In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-5. Commit the files. The **Publish academic website** workflow builds, validates, and deploys the site. If the initial run happens before Pages is enabled, rerun it from **Actions**.
-6. After a successful workflow, the intended public address is **https://rezabn.github.io/**. This address is a target, not a claim that publication has already occurred.
+## Publish the complete website on GitHub Pages
 
-The workflow obtains its canonical base URL from GitHub Pages. It also supports a repository project site. No credentials belong in website source files.
+This is the **complete website**, including English and Farsi source, the RBN logo, the Word CV, and ready-built pages in `dist`. It does not require the earlier website ZIP or bilingual update ZIP.
 
-Official instructions: [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+1. Extract **RezaBN_Complete_Bilingual_Website.zip** on your computer.
+2. Open https://github.com/RezaBN/RezaBN.github.io and choose **Add file → Upload files**, at the repository root on the **Code** page.
+3. Upload the extracted `assets`, `content`, `scripts`, and `dist` folders, together with `README.md` and `package.json`, keeping the folder structure. Commit to `main`. Upload the extracted items themselves, not the ZIP or an extra containing folder.
+4. Keep **Settings → Pages → Source: GitHub Actions**. Keep your existing `.github/workflows/static.yml`; an identical copy is included in this package for a fresh checkout. Use only that workflow for Pages, so an older `pages.yml`, `jekyll.yml`, or `blank.yml` does not compete with it.
+5. Open **Actions** and wait for **Publish academic website** to succeed.
+6. Visit **https://rezabn.github.io/** for English and **https://rezabn.github.io/fa/** for Farsi.
 
-## Edit your information
+The workflow builds the website and publishes **dist**, which contains the homepage `index.html`. There is no need to move `dist/index.html` to the repository root. GitHub's upload dialog may not show hidden folders; your existing workflow is already configured correctly, so it can remain in place.
 
-| Content | File |
+For a new repository or a Git-based upload, include `.github/workflows/static.yml` and `.gitignore` from this package. Never add `.openai/` or Git credentials to the public repository. This package excludes private hosting metadata and Git history.
+
+Official instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+## راهنمای انتشار نسخه کامل
+
+این بسته، نسخه کامل وب‌سایت انگلیسی و فارسی، نشان RBN، رزومه Word و صفحه‌های آماده در پوشه `dist` را شامل می‌شود. به بسته‌های قبلی نیازی نیست.
+
+۱. فایل **RezaBN_Complete_Bilingual_Website.zip** را از حالت فشرده خارج کنید.
+
+۲. در صفحه اصلی مخزن `RezaBN/RezaBN.github.io`، گزینه **Add file → Upload files** را انتخاب کنید.
+
+۳. پوشه‌های `assets`، `content`، `scripts` و `dist` را همراه با `README.md` و `package.json` در ریشه مخزن بارگذاری کنید. خود فایل ZIP یا یک پوشه اضافی که همه فایل‌ها را در بر گرفته است بارگذاری نشود.
+
+۴. تغییرات را در شاخه `main` ثبت کنید. تنظیم **Settings → Pages → Source: GitHub Actions** و فایل فعلی `static.yml` را نگه دارید.
+
+۵. در بخش **Actions** منتظر موفقیت اجرای **Publish academic website** بمانید. نسخه فارسی در مسیر `/fa/` در دسترس خواهد بود.
+
+فایل `index.html` در پوشه `dist` قرار دارد و روند انتشار، محتوای همین پوشه را منتشر می‌کند؛ جابه‌جایی این فایل لازم نیست.
+
+## Your RBN logo
+
+The original transparent PNG is included at **assets/rbn-logo.png**. It appears in the header, footer, About page, and browser icon for both languages. The footer places it on a light panel for contrast. At narrow mobile widths, the header keeps the logo and language control visible, while the full name remains in the page content.
+
+The original artwork is preserved without recoloring, redrawing, stretching, or mirroring. You can reuse the same PNG in lecture notes, presentations, posts, and blog graphics. Use a light background for contrast. The PNG is 1774 × 887 pixels; preserve its 2:1 aspect ratio when inserting it into a document. It is a raster image, not an SVG vector file.
+
+## Edit content
+
+| Content | Source |
 | --- | --- |
-| Identity, contact links, research areas, manuscripts, reviewer counts | `content/site.json` |
-| Papers, DOI links, authors, venue metadata and associated code | `content/publications.json` |
-| Featured software repositories and attribution | `content/projects.json` |
-| Blog posts | `content/posts/*.md` |
-| Word CV | `assets/Reza_Barzegar_Nozari_CV.docx` |
-| Colors, typography and responsive layout | `assets/style.css` |
-| Page layouts and biography text | `scripts/build.mjs` |
+| Shared identity, links, research, manuscripts, review counts | `content/site.json` |
+| English interface text and biography | `content/locales/en.json` |
+| Farsi interface, biography, identity, research, manuscript and project translations, Persian paper titles | `content/locales/fa.json` |
+| Official publication metadata and DOI links | `content/publications.json` |
+| Project metadata, code links, and original-method attribution | `content/projects.json` |
+| English and Farsi blog posts | `content/posts/*.md` |
+| English Word CV | `assets/Reza_Barzegar_Nozari_CV.docx` |
+| Original transparent RBN logo | `assets/rbn-logo.png` |
+| Layout and typography | `assets/style.css` |
+| Static page templates and URL generation | `scripts/build.mjs` |
 
-Update `updated` in `content/site.json` when revising the academic record. The content and review counts initially reflect information provided in October 2026. Two projects are explicitly attributed as reproductions of other authors' work. The introductory blog post was drafted from the supplied research biography and is editable.
+The publication and service record reflects the supplied October 2026 information. The 111 reviews are aggregated across 10 distinct journals. Reproductions retain their original authors' attribution. The introductory blog post is based on the supplied research biography. Persian translations are editable in the files above.
 
-## Write a blog post
+## Add a bilingual blog post
 
-Copy `content/posts/_template.md` to a new filename, such as `2026-11-01-my-new-note.md`. Set the title, date, category, summary and a unique lower-case hyphenated slug. Change `draft: true` to `draft: false` when ready. Files beginning with `_` and posts marked `draft: true` are excluded from the published site.
+Copy `_template.md` for English and `_template.fa.md` for Farsi. Give each a different filename, such as `2026-11-01-new-note.en.md` and `2026-11-01-new-note.fa.md`, but use the **same slug** to pair translations. Set `lang: en` or `lang: fa`. Files starting with `_` and posts with `draft: true` are excluded.
 
 ```markdown
 ---
-title: My new research note
+title: My research note
 date: 2026-11-01
 category: Research notes
-summary: A brief introduction to the note.
-slug: my-new-note
+summary: A short introduction.
+slug: my-research-note
+lang: en
 draft: false
 ---
 
-The first paragraph goes here.
+Your opening paragraph.
 
-## A descriptive heading
+## A section heading
 
-Use **bold**, *emphasis*, `inline code`, and [links](https://example.com).
-
-- An item
-- Another item
+Use **bold**, *emphasis*, `code`, lists, and [links](https://example.com).
 ```
 
-The included Markdown renderer supports paragraphs, headings at levels 2–4, links, emphasis, ordered and unordered lists, blockquotes, inline code, and fenced code blocks. Raw HTML is escaped. It does not render LaTeX equations, nested lists, or Markdown tables. Dates use `YYYY-MM-DD`; metadata values are plain text. Posts marked for publication appear immediately, irrespective of date. Publishing a new post refreshes the blog index, RSS feed, and sitemap automatically on the next workflow run.
+Dates in source use Gregorian `YYYY-MM-DD`; Farsi display dates convert to the Persian calendar automatically. Each language has its own blog index and RSS feed. New posts are published immediately when `draft: false`, regardless of date. If a future post has no translation, its language switch opens the other language's blog index.
 
-## Build locally
+Internal links such as `../../publications/` remain in the reader's selected language. Absolute links use their specified language. The renderer supports headings 2–4, paragraphs, emphasis, links, lists, blockquotes, and fenced code blocks; raw HTML is escaped. It does not render LaTeX, nested lists, or Markdown tables.
 
-Requirements: Node.js 20 or newer; Python 3 for checks. No third-party packages are required.
+## Build and check
+
+Node.js 20+ and Python 3 are required. No npm dependencies, server, database, or API key is needed.
 
 ```sh
 node scripts/build.mjs
 python3 scripts/check_site.py
-python3 -m http.server 8000 --directory dist
+node scripts/check_interactions.mjs
 ```
 
-Open `http://localhost:8000`. Change a source file, rebuild, and refresh. Do not edit `dist` directly: it is regenerated from source. The default canonical address comes from `content/site.json`; set `SITE_URL` to override it during a build.
+Set `SITE_URL` to change canonical URLs for another host. All page and asset links support a GitHub project-site subpath. For a quick offline preview, open `dist/index.html` for English or `dist/fa/index.html` for Farsi. For browser inspection over HTTP, serve `dist` with your preferred static server. The site content is static and does not require an account or backend. Clipboard copying may use the selection fallback when viewing local files.
 
-## Features
+Checks cover every local link and anchor, matching language switches, language/direction attributes, structured data, feeds, font/license, academic data and citation exports. Interaction checks exercise the actual browser script in a lightweight Node harness: Persian/Arabic search variants and digits, filters, reset, localized counters, navigation labels, and citation copying. This update was checked without an interactive browser; visual desktop/mobile QA is still unverified.
 
-- Responsive navigation and layouts with keyboard focus styles, skip navigation, and reduced-motion support.
-- Static, searchable publication list with year and publication-type filters.
-- Per-paper BibTeX disclosure, copy button with fallback selection, and a complete `.bib` download.
-- Project filters for original research software and research reproductions.
-- Markdown blog with article navigation, reading time, RSS, and a sitemap.
-- Search-engine metadata, structured profile data, and a custom 404 page.
-- All academic content is present in generated HTML; it remains readable without JavaScript.
-- No analytics, tracking, contact-form backend, or visitor accounts.
+## Font and hosting
 
-## Deployment and validation notes
+Vazirmatn is self-hosted under the SIL Open Font License; see `assets/fonts/OFL.txt`. Source: https://github.com/rastikerdar/vazirmatn. No third-party font request is made.
 
-The build validates local file links and in-page anchors. The checks verify publication and review totals, duplicate IDs, SEO titles, language declarations, and the CV download. The initial implementation was checked without an interactive browser, so a final visual check on your preferred devices is recommended before making the GitHub site public.
-
-The source of the private preview is synchronized separately. Files under `.openai/` belong only to that preview environment and should not be added to the public GitHub repository. The supplied GitHub ZIP excludes those files.
+The separately hosted preview retains its existing audience. Its `.openai/` configuration and Git history are excluded from GitHub handoffs.
